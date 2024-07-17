@@ -1,8 +1,11 @@
-![objection](img/badge.png)  # Objection!
+# Objection! <img src="img/badge.png" alt="obj" width="5%">
+
+![platform](https://img.shields.io/badge/Platform-Android-green)
+![repo-size](https://img.shields.io/github/repo-size/the0cp/objection)
 
 > Auto Objection! Place the phone flat on the table and knock the desktop.
 
-![objection](img/igiari.png)
+<img src="img/igiari.png" alt="obj"/>
 
 ## Usage
 
