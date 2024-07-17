@@ -1,0 +1,22 @@
+<resources>
+    <string-array name="characters_entries">
+        <item>Wright</item>
+    </string-array>
+
+    <string-array name="characters_val">
+        <item>wright</item>
+    </string-array>
+
+    <string-array name="voice_entries">
+        <item>異議あり!</item>
+        <item>Objection!</item>
+        <item>异议!</item>
+    </string-array>
+
+    <string-array name="voice_val">
+        <item>igiari</item>
+        <item>objection</item>
+        <item>yiyi</item>
+    </string-array>
+
+</resources>

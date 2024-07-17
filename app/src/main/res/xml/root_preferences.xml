@@ -1,0 +1,49 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/settings_header">
+
+
+
+        <ListPreference
+            app:defaultValue="wright"
+            app:entries="@array/characters_entries"
+            app:entryValues="@array/characters_val"
+            app:key="character"
+            app:title="@string/character"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            android:defaultValue="igiari"
+            android:entries="@array/voice_entries"
+            android:entryValues="@array/voice_val"
+            android:key="voice"
+            android:title="@string/voice"
+            app:useSimpleSummaryProvider="true" />
+        <PreferenceCategory android:title="@string/threshold_header">
+
+        </PreferenceCategory>
+        <SeekBarPreference
+            android:defaultValue="4"
+            android:key="threshold"
+            android:max="100"
+            android:title="Sensitivity"
+            app:showSeekBarValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/about_header"/>
+
+    <Preference
+        android:title="Objection!"
+        android:summary="the0cp\nver 1.0">
+    </Preference>
+    <Preference
+        android:title="View Source"
+        android:summary="Open Github">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.github.com/the0cp" />
+    </Preference>
+
+
+
+</PreferenceScreen>

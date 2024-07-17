@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Objection!</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="settings_header">Voice &amp; Splash</string>
+    <string name="threshold_header">Threshold</string>
+    <string name="about_header">About</string>
+
+
+
+    <string name="voice">Voice</string>
+    <string name="character">Character</string>
+    <string name="music">Play Music</string>
+</resources>
