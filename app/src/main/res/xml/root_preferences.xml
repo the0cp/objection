@@ -41,7 +41,7 @@
         android:title="View Source"
         android:summary="Open Github">
         <intent android:action="android.intent.action.VIEW"
-            android:data="http://www.github.com/the0cp" />
+            android:data="https://github.com/the0cp/objection" />
     </Preference>
 
 
