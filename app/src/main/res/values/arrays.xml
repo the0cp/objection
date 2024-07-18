@@ -1,22 +1,46 @@
 <resources>
     <string-array name="characters_entries">
-        <item>Wright</item>
+        <item>Phoenix Wright</item>
+        <item>Apollo Justice</item>
+        <item>Miles Edgeworth</item>
+        <item>Dhurke Sahdmadhi</item>
+        <item>Ga\'ran Sigatar Khura\'in</item>
+        <item>Godot</item>
+        <item>Manfred von Karma</item>
+        <item>Franziska von Karma</item>
+        <item>Nahyuta Sahdmadhi</item>
+        <item>Mia Fey</item>
+        <item>Klavier Gavin</item>
+        <item>Athena Cykes</item>
+        <item>Simon Blackquill</item>
+        <item>Winston Payne</item>
     </string-array>
 
     <string-array name="characters_val">
         <item>wright</item>
+        <item>apollo</item>
+        <item>miles</item>
+        <item>dhurke</item>
+        <item>garan</item>
+        <item>godot</item>
+        <item>manfred</item>
+        <item>franziska</item>
+        <item>nahyuta</item>
+        <item>mia</item>
+        <item>gavin</item>
+        <item>cykes</item>
+        <item>simon</item>
+        <item>payne</item>
     </string-array>
 
     <string-array name="voice_entries">
         <item>異議あり!</item>
         <item>Objection!</item>
-        <item>异议!</item>
     </string-array>
 
     <string-array name="voice_val">
         <item>igiari</item>
         <item>objection</item>
-        <item>yiyi</item>
     </string-array>
 
 </resources>

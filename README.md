@@ -14,12 +14,28 @@ Place the phone flat on the table and knock the desktop, the App will automatica
 ## Preferences
 
 ![pref](img/pref.jpg)
+## Support Characters
+
+- Phoenix Wright
+- Apollo Justice
+- Miles Edgeworth
+- Dhurke Sahdmadhi
+- Ga'ran Sigatar Khura'in
+- Godot</item>
+- Manfred von Karma
+- Franziska von Karma
+- Nahyuta Sahdmadhi
+- Mia Fey
+- Klavier Gavin
+- Athena Cykes
+- Simon Blackquill
+- Winston Payne
 
 ## Support Languages
 
 - English
 - Japanese
-- Chinese
+- ~Chinese~ (No longer supported, no complete voice found)
 
 ## TODO
 - Add more voices
