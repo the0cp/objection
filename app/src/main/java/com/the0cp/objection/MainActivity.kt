@@ -18,12 +18,15 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Switch
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.preference.PreferenceManager
+import androidx.preference.SwitchPreference
+import kotlin.properties.Delegates
 
 class AccelerationDetector(private val sensorManager: SensorManager, private var threshold: Float, private val onAccelerationDetected: () -> Boolean) : SensorEventListener {
 
@@ -92,6 +95,8 @@ class MainActivity : AppCompatActivity(){
     private var threshold: Float = 0F
 
     private lateinit var voicePath: String
+
+    private var voiceSwitch by Delegates.notNull<Boolean>()
 
 
     private fun playAudio(context: Context, filePath: String){
@@ -209,7 +214,9 @@ class MainActivity : AppCompatActivity(){
 
         val selectedCharacter = preferences.getString("character", "wright")
         val selectedVoice = preferences.getString("voice", "igiari")
-        voicePath = "lines/$selectedCharacter/$selectedVoice.mp3"   // concat strings
+        voicePath = "lines/$selectedCharacter/$selectedVoice.mp3"   /* concat strings */
+
+        voiceSwitch = preferences.getBoolean("is_voice", true)  /* get switch state */
 
         /*
         *  set splash
@@ -224,10 +231,14 @@ class MainActivity : AppCompatActivity(){
         println(imagePath)
 
 
+
+
         accelerationDetector = AccelerationDetector(sensorManager, threshold) {
             accelerationDetector.stopListening()
             println(voicePath)
-            playAudio(this, voicePath)
+            if(voiceSwitch){
+                playAudio(this, voicePath)
+            }
             imageView.visibility = View.VISIBLE
             handler.postDelayed({
                 imageView.visibility = View.INVISIBLE
@@ -276,6 +287,8 @@ class MainActivity : AppCompatActivity(){
         val selectedCharacter = preferences.getString("character", "wright")
         val selectedVoice = preferences.getString("voice", "igiari")
         voicePath = "lines/$selectedCharacter/$selectedVoice.mp3"   // concat strings
+
+        voiceSwitch = preferences.getBoolean("is_voice", true)  /* get switch state */
 
         /*
         *  set splash
