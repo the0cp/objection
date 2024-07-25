@@ -38,5 +38,5 @@ Place the phone flat on the table and knock the desktop, the App will automatica
 - ~Chinese~ (No longer supported, no complete voice found)
 
 ## TODO
-- Add more voices
-- Add music toggle
+[X] Add more voices 
+[X] Add voice toggle
