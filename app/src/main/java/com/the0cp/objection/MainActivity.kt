@@ -10,23 +10,25 @@ import android.hardware.SensorManager
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.Switch
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.preference.PreferenceManager
-import androidx.preference.SwitchPreference
 import kotlin.properties.Delegates
+import kotlinx.coroutines.*
 
 class AccelerationDetector(private val sensorManager: SensorManager, private var threshold: Float, private val onAccelerationDetected: () -> Boolean) : SensorEventListener {
 
@@ -97,6 +99,8 @@ class MainActivity : AppCompatActivity(){
     private lateinit var voicePath: String
 
     private var voiceSwitch by Delegates.notNull<Boolean>()
+
+    private var vibSwitch by Delegates.notNull<Boolean>()
 
 
     private fun playAudio(context: Context, filePath: String){
@@ -218,6 +222,8 @@ class MainActivity : AppCompatActivity(){
 
         voiceSwitch = preferences.getBoolean("is_voice", true)  /* get switch state */
 
+        vibSwitch = preferences.getBoolean("is_vib", false) /* get vibrator state */
+
         /*
         *  set splash
         * */
@@ -235,7 +241,22 @@ class MainActivity : AppCompatActivity(){
 
         accelerationDetector = AccelerationDetector(sensorManager, threshold) {
             accelerationDetector.stopListening()
+
             println(voicePath)
+
+            if(vibSwitch){
+                CoroutineScope(Dispatchers.Default).launch {
+                    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                    if (vibrator.hasVibrator()) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
+                        } else {
+                            vibrator.vibrate(200)
+                        }
+                    }
+                }
+            }
+
             if(voiceSwitch){
                 playAudio(this, voicePath)
             }
@@ -289,6 +310,8 @@ class MainActivity : AppCompatActivity(){
         voicePath = "lines/$selectedCharacter/$selectedVoice.mp3"   // concat strings
 
         voiceSwitch = preferences.getBoolean("is_voice", true)  /* get switch state */
+
+        vibSwitch = preferences.getBoolean("is_vib", false) /* get vibrator state */
 
         /*
         *  set splash

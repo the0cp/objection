@@ -35,6 +35,13 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/other_header">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="is_vib"
+            android:title="@string/is_vib" />
+    </PreferenceCategory>
+
     <PreferenceCategory app:title="@string/about_header"/>
 
     <Preference

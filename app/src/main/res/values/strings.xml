@@ -6,10 +6,12 @@
     <string name="settings_header">Voice &amp; Splash</string>
     <string name="threshold_header">Threshold</string>
     <string name="about_header">About</string>
+    <string name="other_header">Other</string>
 
 
 
     <string name="voice">Voice</string>
     <string name="character">Character</string>
     <string name="is_voice">Play Voice</string>
+    <string name="is_vib">Vibrate</string>
 </resources>
