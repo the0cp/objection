@@ -46,7 +46,7 @@
 
     <Preference
         android:summary="Author: the0cp\nVersion: v1.2"
-        android:title="Objection!"></Preference>
+        android:title="Objection!" />
     <Preference
         android:title="View Source"
         android:summary="Open Github">
