@@ -45,7 +45,7 @@
     <PreferenceCategory app:title="@string/about_header"/>
 
     <Preference
-        android:summary="Author: the0cp\nVersion: v1.2"
+        android:summary="Author: the0cp\nVersion: v1.3"
         android:title="Objection!" />
     <Preference
         android:title="View Source"
