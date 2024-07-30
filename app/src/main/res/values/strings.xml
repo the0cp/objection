@@ -9,9 +9,10 @@
     <string name="other_header">Other</string>
 
 
-
     <string name="voice">Voice</string>
     <string name="character">Character</string>
     <string name="is_voice">Play Voice</string>
     <string name="is_vib">Vibrate</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">Objection!</string>
 </resources>
