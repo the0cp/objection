@@ -5,12 +5,14 @@
     android:id="@+id/widget_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Base.Theme.Objection.AppWidgetContainer">
+    android:theme="@style/Base.Theme.Objection.AppWidgetContainer"
+    android:background="@android:color/transparent">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/app_widget_description"
         android:visibility="visible"
         app:srcCompat="@drawable/objection"
         tools:srcCompat="@drawable/objection" />
