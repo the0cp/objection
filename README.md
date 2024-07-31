@@ -1,7 +1,7 @@
 # Objection! <img src="img/badge.png" alt="obj" width="5%">
 
 ![platform](https://img.shields.io/badge/Platform-Android-green)
-![version](https://img.shields.io/badge/Version-v1.2-yellow)
+![version](https://img.shields.io/badge/Version-v1.4-yellow)
 ![repo-size](https://img.shields.io/github/repo-size/the0cp/objection)
 
 > Auto Objection! Place the phone flat on the table and knock the desktop.
@@ -41,3 +41,4 @@ Place the phone flat on the table and knock the desktop, the App will automatica
 ## TODO
 - [x] Add more voices    
 - [x] Add voice toggle
+- [x] Add widget
