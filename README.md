@@ -12,6 +12,17 @@
 
 Place the phone flat on the table and knock the desktop, the App will automatically pop-up the "Objection!" banner.
 
+## Widget & Live Wallpaper
+
+- Widget(resizable)
+
+![widget](img/widget.jpg)
+
+- Live Wallpaper
+
+![wallpaper](img/wallpaper.jpg)
+
+
 ## Preferences
 
 ![pref](img/pref.jpg)
