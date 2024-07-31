@@ -16,11 +16,11 @@ Place the phone flat on the table and knock the desktop, the App will automatica
 
 - Widget(resizable)
 
-![widget](img/widget.jpg)
+<img src=img/widget.jpg width=20%  alt="widget"/>
 
 - Live Wallpaper
 
-![wallpaper](img/wallpaper.jpg)
+<img src=img/wallpaper.jpg width=20%  alt="wallpaper"/>
 
 
 ## Preferences
