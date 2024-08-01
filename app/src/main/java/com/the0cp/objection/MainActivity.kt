@@ -71,7 +71,6 @@ class AccelerationDetector(private val sensorManager: SensorManager, private var
 
 
         if (threshold < gravityAcceleration) {
-            println("grav$gravityAcceleration")
             onAccelerationDetected()
         }
     }
@@ -233,16 +232,8 @@ class MainActivity : AppCompatActivity(){
 
         threshold = (9.81).toFloat() + (preferences.getInt("threshold", 0).toFloat())/20
 
-        println(threshold)
-        println(imagePath)
-
-
-
-
         accelerationDetector = AccelerationDetector(sensorManager, threshold) {
             accelerationDetector.stopListening()
-
-            println(voicePath)
 
             if(vibSwitch){
                 CoroutineScope(Dispatchers.Default).launch {
@@ -265,7 +256,6 @@ class MainActivity : AppCompatActivity(){
                 imageView.visibility = View.INVISIBLE
                 accelerationDetector.startListening()
             }, 2000)
-            // println("show")
         }
 
 
@@ -321,14 +311,12 @@ class MainActivity : AppCompatActivity(){
         setImg(this, imagePath, imageView)
 
         threshold = (9.81).toFloat() + (preferences.getInt("threshold", 0).toFloat())/20
-        println("resume, $threshold")
         accelerationDetector.updateThreshold(threshold)
         accelerationDetector.startListening()
 
     }
 
     override fun onPause() {
-        println("pause")
         super.onPause()
         accelerationDetector.stopListening()
         wakeLock.release()
