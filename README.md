@@ -8,6 +8,12 @@
 
 <img src="img/igiari.png" alt="obj"/>
 
+## Download
+
+![version](https://img.shields.io/badge/Version-v1.5-yellow)
+
+Download the latest version(apk): [https://github.com/the0cp/objection/releases](https://github.com/the0cp/objection/releases)
+
 ## Usage
 
 Place the phone flat on the table and knock the desktop, the App will automatically pop-up the "Objection!" banner.
