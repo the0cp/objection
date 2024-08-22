@@ -6,7 +6,7 @@
 
 > Auto Objection! Place the phone flat on the table and knock the desktop.
 
-<img src="img/igiari.png" alt="obj"/>
+<img src="img/igiari.png" alt="obj"/><img src=img/obj.gif alt="obj gif"/>
 
 ## Download
 
