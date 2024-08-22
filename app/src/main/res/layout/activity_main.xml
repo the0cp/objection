@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        tools:ignore="MissingConstraints" />
+
+
     <ImageButton
         android:id="@+id/settingButton"
         android:layout_width="52dp"

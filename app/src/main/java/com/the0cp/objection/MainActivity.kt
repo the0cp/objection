@@ -27,6 +27,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.preference.PreferenceManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlin.properties.Delegates
 import kotlinx.coroutines.*
 
@@ -100,6 +102,8 @@ class MainActivity : AppCompatActivity(){
     private var voiceSwitch by Delegates.notNull<Boolean>()
 
     private var vibSwitch by Delegates.notNull<Boolean>()
+
+    private var bgSwitch by Delegates.notNull<Boolean>()
 
 
     private fun playAudio(context: Context, filePath: String){
@@ -211,17 +215,26 @@ class MainActivity : AppCompatActivity(){
         imageView = findViewById(R.id.imageView)
         imageView.visibility = View.INVISIBLE
 
+        val bgView: ImageView = findViewById(R.id.background_image)
+        bgView.visibility = View.INVISIBLE
+
+
         /*
             *  get preferences
             * */
 
         val selectedCharacter = preferences.getString("character", "wright")
         val selectedVoice = preferences.getString("voice", "igiari")
+
+
+
         voicePath = "lines/$selectedCharacter/$selectedVoice.mp3"   /* concat strings */
 
         voiceSwitch = preferences.getBoolean("is_voice", true)  /* get switch state */
 
         vibSwitch = preferences.getBoolean("is_vib", false) /* get vibrator state */
+
+        bgSwitch = preferences.getBoolean("is_bg", false) /* get backgrounds state */
 
         /*
         *  set splash
@@ -251,9 +264,21 @@ class MainActivity : AppCompatActivity(){
             if(voiceSwitch){
                 playAudio(this, voicePath)
             }
+
+            if(bgSwitch){
+                Glide.with(this)
+                    .asGif()
+                    .load(R.drawable.bg)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(bgView)
+                bgView.visibility = View.VISIBLE
+            }
+
             imageView.visibility = View.VISIBLE
+
             handler.postDelayed({
                 imageView.visibility = View.INVISIBLE
+                bgView.visibility = View.INVISIBLE
                 accelerationDetector.startListening()
             }, 2000)
         }
@@ -302,6 +327,8 @@ class MainActivity : AppCompatActivity(){
         voiceSwitch = preferences.getBoolean("is_voice", true)  /* get switch state */
 
         vibSwitch = preferences.getBoolean("is_vib", false) /* get vibrator state */
+
+        bgSwitch = preferences.getBoolean("is_bg", false) /* get backgrounds state */
 
         /*
         *  set splash

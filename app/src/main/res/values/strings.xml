@@ -10,6 +10,7 @@
 
 
     <string name="voice">Voice</string>
+    <string name="backgrounds">Backgrounds</string>
     <string name="character">Character</string>
     <string name="is_voice">Play Voice</string>
     <string name="is_vib">Vibrate</string>
