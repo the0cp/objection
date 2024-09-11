@@ -1,4 +1,4 @@
-# Objection! v1.6<img src="img/badge.png" alt="obj" width="5%">
+# Objection! v1.6<img src="img/badge.png" alt="obj" width="20%">
 
 ![platform](https://img.shields.io/badge/Platform-Android-green)
 ![version](https://img.shields.io/badge/Version-v1.6-yellow)
