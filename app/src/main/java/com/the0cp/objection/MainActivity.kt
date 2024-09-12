@@ -1,7 +1,11 @@
 package com.the0cp.objection
 
+import android.app.PendingIntent
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.BitmapFactory
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -87,6 +91,8 @@ class AccelerationDetector(private val sensorManager: SensorManager, private var
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity(){
     private val handler = Handler(Looper.getMainLooper())
+
+    private lateinit var sharedPreferences: SharedPreferences
 
     private lateinit var sensorManager: SensorManager
     private lateinit var accelerationDetector: AccelerationDetector
@@ -181,6 +187,27 @@ class MainActivity : AppCompatActivity(){
         }
     }
 
+    private fun isFirstLaunch(): Boolean{
+        return sharedPreferences.getBoolean("first_launch", true)
+    }
+
+    private fun pinAppWidget(context: Context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+            val myProvider = ComponentName(context, AppWidget::class.java)
+
+            if (appWidgetManager.isRequestPinAppWidgetSupported) {
+                val configureIntent = Intent(context, AppWidget::class.java)
+                // create PendingIntent
+                val pendingIntent = PendingIntent.getActivity(
+                    context, 0, configureIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                appWidgetManager.requestPinAppWidget(myProvider, null, pendingIntent)
+            }
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -244,6 +271,16 @@ class MainActivity : AppCompatActivity(){
         setImg(this, imagePath, imageView)
 
         threshold = (9.81).toFloat() + (preferences.getInt("threshold", 0).toFloat())/20
+
+        /*
+        * pop pin app widget request
+        * */
+
+        sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+        if(isFirstLaunch()){
+            pinAppWidget(this)
+            sharedPreferences.edit().putBoolean("first_launch", false).apply()
+        }
 
         accelerationDetector = AccelerationDetector(sensorManager, threshold) {
             accelerationDetector.stopListening()
@@ -310,6 +347,7 @@ class MainActivity : AppCompatActivity(){
             insets
         }
     }
+
     override fun onResume() {
         super.onResume()
         wakeLock.acquire()

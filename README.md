@@ -23,7 +23,7 @@ Place the phone flat on the table and knock the desktop, the App will automatica
 - Widget(resizable)
 
 <img src=img/widget.jpg width=20%  alt="widget"/>
-
+  
 - Live Wallpaper
 
 <img src=img/wallpapers.png width=20%  alt="wallpaper"/><img src=img/wallpapers.gif width="20%" alt="wallpaper gif"/>
