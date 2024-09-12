@@ -1,7 +1,7 @@
-# Objection! v1.6<img src="img/badge.png" alt="obj" width="20%">
+# Objection! v1.7<img src="img/badge.png" alt="obj" width="20%">
 
 ![platform](https://img.shields.io/badge/Platform-Android-green)
-![version](https://img.shields.io/badge/Version-v1.6-yellow)
+![version](https://img.shields.io/badge/Version-v1.7-yellow)
 ![repo-size](https://img.shields.io/github/repo-size/the0cp/objection)
 
 > Auto Objection! Place the phone flat on the table and knock the desktop.
@@ -10,7 +10,7 @@
 
 ## Download
 
-![version](https://img.shields.io/badge/Version-v1.6-yellow)
+![version](https://img.shields.io/badge/Version-v1.7-yellow)
 
 Download the latest version(apk): [https://github.com/the0cp/objection/releases](https://github.com/the0cp/objection/releases)
 
