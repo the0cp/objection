@@ -39,7 +39,7 @@ Place the phone flat on the table and knock the desktop, the App will automatica
 - Miles Edgeworth
 - Dhurke Sahdmadhi
 - Ga'ran Sigatar Khura'in
-- Godot</item>
+- Godot
 - Manfred von Karma
 - Franziska von Karma
 - Nahyuta Sahdmadhi
@@ -53,7 +53,6 @@ Place the phone flat on the table and knock the desktop, the App will automatica
 
 - English
 - Japanese
-- ~Chinese~ (No longer supported, no complete voice found)
 
 ## TODO
 - [x] Add more voices    
