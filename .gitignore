@@ -1,15 +1,32 @@
-*.iml
+# Gradle files
 .gradle
+/build
 /local.properties
+
+# Android Studio / IntelliJ IDEA files
+*.iml
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/.idea/codeStyles
+/.idea/deploymentTargetSelector.xml
+/.idea/runConfigurations.xml
+
+# macOS system files
 .DS_Store
-/build
+
+# Android build generated
 /captures
 .externalNativeBuild
 .cxx
-local.properties
+
+# Build Artifacts (Archives)
+*.apk
+*.aab
+*.ap_
+
+# Specific Ignore for app/release folder
+/app/release/
